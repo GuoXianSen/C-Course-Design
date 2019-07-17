@@ -1,0 +1,61 @@
+# Project: 项目1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = 菜单(多级).o 密码重置（商家）.o 密码重置.o 信息修改（商家）.o 信息修改（用户）.o A_S.o B.o B_C.o B_O.o mainmenu.o mytime.o 评价函数.o
+LINKOBJ  = 菜单(多级).o 密码重置（商家）.o 密码重置.o 信息修改（商家）.o 信息修改（用户）.o A_S.o B.o B_C.o B_O.o mainmenu.o mytime.o 评价函数.o
+LIBS     = -L"F:/Dev-Cpp/MinGW64/lib32" -L"F:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32
+INCS     = -I"F:/Dev-Cpp/MinGW64/include" -I"F:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"F:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"F:/Dev-Cpp/MinGW64/include" -I"F:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"F:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"F:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 项目1.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+菜单(多级).o: 菜单(多级).c
+	$(CPP) -c 菜单(多级).c -o 菜单(多级).o $(CXXFLAGS)
+
+密码重置（商家）.o: 密码重置（商家）.c
+	$(CPP) -c 密码重置（商家）.c -o 密码重置（商家）.o $(CXXFLAGS)
+
+密码重置.o: 密码重置.c
+	$(CPP) -c 密码重置.c -o 密码重置.o $(CXXFLAGS)
+
+信息修改（商家）.o: 信息修改（商家）.c
+	$(CPP) -c 信息修改（商家）.c -o 信息修改（商家）.o $(CXXFLAGS)
+
+信息修改（用户）.o: 信息修改（用户）.c
+	$(CPP) -c 信息修改（用户）.c -o 信息修改（用户）.o $(CXXFLAGS)
+
+A_S.o: A_S.c
+	$(CPP) -c A_S.c -o A_S.o $(CXXFLAGS)
+
+B.o: B.c
+	$(CPP) -c B.c -o B.o $(CXXFLAGS)
+
+B_C.o: B_C.c
+	$(CPP) -c B_C.c -o B_C.o $(CXXFLAGS)
+
+B_O.o: B_O.c
+	$(CPP) -c B_O.c -o B_O.o $(CXXFLAGS)
+
+mainmenu.o: mainmenu.c
+	$(CPP) -c mainmenu.c -o mainmenu.o $(CXXFLAGS)
+
+mytime.o: mytime.c
+	$(CPP) -c mytime.c -o mytime.o $(CXXFLAGS)
+
+评价函数.o: 评价函数.c
+	$(CPP) -c 评价函数.c -o 评价函数.o $(CXXFLAGS)
